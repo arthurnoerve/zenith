@@ -1,0 +1,40 @@
+{{ define "main" }}
+
+    <h1>{{ .Title }}</h1>
+
+
+    {{ range .Data.Pages.GroupByDate "2006" }}
+        <h2>{{ .Key }}</h2>
+
+        {{ range .Pages.GroupByDate "2006-01-01" }}
+            <div class="month">
+                <h3>{{ dateFormat "January" .Key }}</h3>
+                {{ range .Pages }}
+                    <a href="{{ .Permalink }}">
+                    <article class="{{if .Params.featured}}featured{{end}}">
+                        <time>{{ .Date.Format "Mon, 2" }}</time>
+                        <div>{{ .Title }}</div>
+
+
+                    </article>
+                    </a>
+                {{ end }}
+            </div>
+
+
+        {{ end }}
+        <br><br>
+    {{ end }}
+
+
+    <!--{{ range .Data.Pages.GroupByDate "2006-01-01" }}
+        <h2>{{ dateFormat "January" .Key }}</h2>
+        {{ range .Pages }}
+            <article>
+                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                <time>{{ .Date.Format "Mon, Jan 2, 2006" }}</time>
+            </article>
+        {{ end }}
+    {{ end }}-->
+
+{{ end }}

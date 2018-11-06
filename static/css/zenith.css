@@ -1,0 +1,332 @@
+
+
+body {
+    font-family: 'Montserrat', monospace;
+    color: #262626;
+}
+
+/* FRONT */
+
+
+h1 {
+    color: #262626;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+    font-size: 3.8em;
+    font-family: 'Montserrat', cursive;
+    text-align: center ;
+}
+
+h2,h3,h4,h5,h6 {
+    font-family: 'Montserrat', cursive;
+}
+h2 {
+    font-size: 2em;
+    text-align: left;
+    margin-bottom: 0.75em;
+}
+h3 {
+    font-size: 1.5em;
+}
+h4 {
+    font-size: 1.3em;
+}
+h5 {
+    font-size:1.2em;
+}
+h1 a {
+    text-decoration: none;
+}
+h1 a:hover {
+    text-decoration: none;
+    color: initial;
+}
+strong a {
+    font-weight: 600;
+}
+a {
+    color: #262626;
+    font-weight: 400;
+    text-decoration: underline;
+}
+a:hover {
+    color: #893318;
+}
+
+a.navlink {
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 0.3em 1em;
+}
+
+hr {
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+blockquote {
+    padding-left: 2em;
+    border-left: 5px solid #BA4521;
+}
+iframe {
+    border: none !important;
+}
+img {
+    max-width: 100%;
+    margin-bottom: 2em;
+}
+
+ol {
+    list-style: upper-roman;
+    padding-left: 20px;
+}
+ul {
+    list-style: circle;
+    padding-left: 20px
+}
+ul ul, ol ul {
+    list-style: square;
+    padding-left: 3em;
+}
+ul ol, ol ol {
+    list-style: upper-greek;
+    padding-left: 3em;
+}
+ul > li {
+    margin-bottom: 1em;
+    margin-left: 0;
+    padding-left: 0;
+}
+ol > li {
+    margin-left: 0;
+    padding-left: 0;
+}
+ul + h2, ul + h3, ul + h4, ul + h5, ul + h6, ul + p {
+    margin-top: 2em;
+}
+
+p {
+    line-height: 2;
+    margin-bottom: 3em;
+}
+
+s {
+    color: grey;
+}
+
+aside {
+    margin-top:4em;
+}
+
+
+
+
+header {
+    width: 100vw;
+    background-color:white;
+    padding-top: 6em;
+    margin-bottom: 4em;
+    position: relative;
+    text-align: center;
+
+    /*background-image: url(images/back.jpg);
+    background-size: cover;*/
+
+}
+header > h1 {
+    margin-bottom: 0em;
+    font-family: 'Sacramento', cursive;
+}
+header > p {
+    margin-bottom:3.5em;
+}
+header .content {
+    margin: auto;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+nav {
+    margin-bottom: 3em;
+}
+header .content p {
+    text-align: left;
+}
+
+
+
+
+
+
+
+
+
+footer {
+    text-align: center;
+    padding: 5em 0;
+}
+
+
+.content-container {
+    margin-bottom: 2em;
+}
+
+.content-container .content {
+    margin: auto;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+}
+
+.month {
+    padding-top: 1em;
+}
+.month a {
+    text-decoration: none;
+}
+
+article {
+    margin-bottom: 0.5em;
+    overflow: auto;
+
+    transform: translateX(0);
+    transition: transform 0.2s ease;
+
+    display: flex;
+
+}
+article:hover {
+    transform: translateX(4px);
+    color: #893318;
+    /*font-weight: 800;*/
+}
+article time {
+    text-align: right;
+    float: left;
+    width: 15%;
+    margin-right: 5%;
+    min-width: 80px;
+}
+article.featured {
+    border-left: 5px solid #893318;
+    margin-left: -5px;
+}
+
+
+
+
+.hint {
+    width: 100%;
+    border: 1px dashed #262626;
+    padding: 1em 2em;
+    text-align: justify;
+    font-style: italic;
+    font-size: 0.8em;
+    box-sizing: border-box;
+    margin-bottom: 4.286em;
+    display: block;
+}
+.left {
+}
+.right {
+}
+.hint img {
+    box-sizing: border-box
+}
+.hint p {
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+.hint.hide {
+    display: none;
+}
+
+
+/* Desktop */
+/*
+@media (max-width: 767px) and (min-width:400px) {
+
+}*/
+
+
+@media (min-width: 786px) {
+
+    iframe {
+        border: none !important;
+    }
+    img {
+        max-width: 110%;
+        margin-left: -5%;
+        margin-bottom: 2em;
+        transition: transform 0.2s ease;
+    }
+    img:hover {
+        transform: scale(1.01);
+    }
+
+
+
+    header {
+        font-size: 1em;
+    }
+
+
+    .hint img {
+        max-width: 100%;
+        margin-left: 0;
+        margin-bottom: 2em;
+    }
+
+}
+
+
+/* For hints and archives*/
+@media (min-width: 1100px) {
+
+    header {
+        font-size: 1em;
+    }
+
+
+    .hint {
+        position: absolute;
+        max-width: 200px;
+        border:none;
+        padding-top: 0;
+    }
+    .left {
+        left: -250px;
+    }
+    .right {
+        right: -250px;
+    }
+    .hint img {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    .hint p {
+        margin-top: 0;
+    }
+    .hint.hide {
+        display: initial;
+    }
+
+
+
+    .month {
+        padding-top: 2em;
+        padding-bottom: 2em;
+    }
+    .month h3 {
+        position: absolute;
+        max-width: 200px;
+        border:none;
+        padding-top: 0;
+        left: -30px;
+        transform: translateX(-100%);
+    }
+
+}

@@ -1,0 +1,14 @@
+{{ define "main" }}
+    <h1>{{ .Title }}</h1>
+
+    <p>
+        Met in {{.Params.met}}<br>
+        From {{.Params.from}}
+    </p>
+
+    {{ .Content }}
+
+    <aside >
+        {{ .Date.Format "January 1 2006" }}
+    </aside>
+{{ end }}

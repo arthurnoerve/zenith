@@ -1,0 +1,10 @@
+
+{{ if .IsNamedParams }}
+    <span class="hint {{.Get "src" }} {{.Get "hide" }}">
+{{ else }}
+    <span class="hint {{.Get 0}} {{.Get 1 }}">
+{{ end }}
+
+    {{ .Inner  }}
+
+</span>

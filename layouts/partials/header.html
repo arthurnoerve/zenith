@@ -1,0 +1,36 @@
+<header class="container-fluid">
+
+    <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Params.heading }}</a></h1>
+
+    <p>
+        {{ .Site.Params.subheading }}
+    </p>
+
+    <nav>
+
+
+        {{ $length:= sub (len .Site.Params.navigation) 1}}
+        {{ range $i,$l := .Site.Params.navigation }}
+            {{ if .url }}
+                <a class="navlink" {{ (printf "href=%s%s" $.LanguagePrefix .url) | safeHTMLAttr }}>{{ .text }}</a>
+                {{ if lt $i $length }}
+                     ∞
+                {{ end }}
+
+            {{ end }}
+
+        {{ end }}
+    </nav>
+
+    <div class="content">
+
+
+        {{ if .IsHome }}
+            <img src="{{ .Site.Params.front.headerimage }}" alt="">
+            {{ .Site.Params.front.description |  safeHTML }}
+        {{ end }}
+
+
+    </div>
+
+</header>

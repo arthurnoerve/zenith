@@ -1,0 +1,26 @@
+<footer class="container-fluid footer">
+
+    <nav>
+
+        {{ $length:= sub (len .Site.Params.footer.navigation) 1}}
+        {{ range $i,$l := .Site.Params.footer.navigation }}
+            {{ if .url }}
+                <a class="navlink" {{ printf "href=%q" .url | safeHTMLAttr }}>{{ .text }}</a>
+                {{ if lt $i $length }}
+                     ∞
+                {{ end }}
+
+            {{ end }}
+
+        {{ end }}
+         ∞
+        <a class="navlink" {{ printf "href=%s#top" .URL | safeHTMLAttr }}>⤴︎</a>
+    </nav>
+
+
+
+    <p>{{ .Site.Params.footer.copyright }}</p>
+
+
+
+</footer>

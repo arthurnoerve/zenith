@@ -1,0 +1,39 @@
+
+
+{{ define "main" }}
+    {{ .Content }}
+
+
+    {{ if isset .Site.Params.front "featuredtype" }}
+
+
+        {{ $posts := (where .Data.Pages.ByPublishDate.Reverse "Type" .Site.Params.front.featuredType) }}
+
+
+        {{ if (len $posts) }}
+            <hr />
+            <section class="featured-article">
+
+                {{ range first 1 ( $posts ) }}
+
+                <h1><a href="{{.Permalink}}">{{.Title}}</a></h1>
+                {{.Content}}
+
+                <aside >
+                    {{ .Date.Format "January 1 2006" }}
+                </aside>
+                {{ end }}
+            </section>
+
+            <br>
+            <a href="/post">Read more like this ></a>
+        {{ end }}
+
+
+    {{ end }}
+
+
+
+
+
+{{ end }}
